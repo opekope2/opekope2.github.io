@@ -463,7 +463,7 @@
                         tp = press;
                         break;
                     default:
-                        Materialize.toast('Invalid move.\nPlease make a valid move.', 4000);
+                        Materialize.toast('Invalid move, Please make a valid move.', 4000);
                         break;
                 }
             } else {
@@ -479,12 +479,12 @@
             } else if (r0[1] - r1[1] == 0) {
                 movecol(r0, r1, false);
             } else {
-                Materialize.toast('Invalid move\nThis location is too far from your nearest color cell', 4000);
+                Materialize.toast('Invalid move, This location is too far from your nearest color cell', 4000);
             }
         }
         function movecol(c0, c1, mv) {
             if (document.getElementById(c1).style.color != players[0]) {
-                Materialize.toast('Invalid move.\nPlease make a valid move.', 4000);
+                Materialize.toast('Invalid move, Please make a valid move.', 4000);
                 return;
             }
             var columncheck0;
@@ -498,7 +498,7 @@
             } else if (columncheck0 - columncheck1 == 0) {
 
             } else {
-                Materialize.toast('Invalid move\nThis location is too far from your nearest color cell', 4000);
+                Materialize.toast('Invalid move, This location is too far from your nearest color cell', 4000);
                 return;
             }
             if (mv) {

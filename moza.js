@@ -14,7 +14,6 @@ function disp()
 	values["rgb(52, 0, 150)"] = 1;
 	values["rgb(153, 51, 0)"] = 1.5;
 	values["rgb(255, 17, 0)"] = 2;
-	values.push({});
 	var avgwin = window.open("", "Átlag", "width=400,height=300");
 	var statistics = document.getElementById("statistics");
 	for (var i = 0, row; row = statistics.rows[i]; i++)

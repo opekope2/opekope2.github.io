@@ -1,8 +1,8 @@
 var loc = document.getElementById("jegyhelpgomb").parentElement;
 var avgbtn = document.createElement("button");
-avgbtn.innerText = "Súlyozott átlag";
+avgbtn.innerHTML = "Súlyozott átlag";
 avgbtn.className = "css3_button blue";
-avgbtn.onclick = avg;
+avgbtn.addEventListener("click", avg, false);
 loc.appendChild(avgbtn);
 function avg()
 {

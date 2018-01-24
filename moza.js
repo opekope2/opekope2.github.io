@@ -39,15 +39,15 @@ function disp()
 }
 function avg(arr)
 {
-	var normal = parseInt(0);
-	var weighted = parseInt(0);
-	var nums = parseInt(0);
+	var normal = Number(0);
+	var weighted = Number(0);
+	var nums = Number(0);
 	for(var v = 0; v < arr.length; v++)
 	{
-		weighted += parseInt(arr[v].grade) * parseInt(arr[v].multiplier);
-		nums += parseInt(arr[v].multiplier);
-		normal += parseInt(arr[v].grade);
+		weighted += Number(arr[v].grade) * Number(arr[v].multiplier);
+		nums += Number(arr[v].multiplier);
+		normal += Number(arr[v].grade);
 	}
-	var ret = { normal: normal / arr.length, weighted: Number(weighted) / Number(nums) };
+	var ret = { normal: normal / arr.length, weighted: weighted / nums };
 	return ret;
 }

@@ -23,7 +23,12 @@ function disp()
 		{
 			for (var k = 0, child; child = col.children[k]; k++)
 			{
-				grades.push({ grade: child.innerText, multiplier: values[child.style.color] });
+				var g = child.innerText;
+				g = g.replace("1/2","1.5");
+				g = g.replace("2/3","2.5");
+				g = g.replace("3/4","3.5");
+				g = g.replace("4/5","4.5");
+				grades.push({ grade: g, multiplier: values[child.style.color] });
    			}
    		}
 		var div = "";
@@ -39,6 +44,8 @@ function disp()
 }
 function avg(arr)
 {
+	if(!arr.length)
+		return { normal: "(nincs osztályzat)", weighted: "(nincs osztályzat)" };
 	var normal = Number(0);
 	var weighted = Number(0);
 	var nums = Number(0);

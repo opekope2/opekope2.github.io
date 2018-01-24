@@ -48,6 +48,6 @@ function avg(arr)
 		nums += parseInt(arr[v].multiplier);
 		normal += parseInt(arr[v].grade);
 	}
-	var ret = { normal: normal / arr.length, weighted: weighted / nums };
+	var ret = { normal: normal / arr.length, weighted: Number(weighted) / Number(nums) };
 	return ret;
 }

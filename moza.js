@@ -2,9 +2,9 @@ var loc = document.getElementById("jegyhelpgomb").parentElement;
 var avgbtn = document.createElement("button");
 avgbtn.innerHTML = "Súlyozott átlag";
 avgbtn.className = "css3_button blue";
-avgbtn.addEventListener("click", avg, false);
+avgbtn.addEventListener("click", disp, false);
 loc.appendChild(avgbtn);
-function avg()
+function disp()
 {
 	var values = [];
 	values["rgb(34, 30, 31)"] = 1;
@@ -16,17 +16,37 @@ function avg()
 	values["rgb(255, 17, 0)"] = 2;
 	values.push({});
 	var avgwin = window.open("", "Átlag", "width=400,height=300");
-	avgwin.document.write("Az átlag itt jelenik meg");
 	var statistics = docuemnt.getElementById("statistics");
 	for (var i = 0, row; row = statistics.rows[i]; i++)
 	{
-		var grades = [];
-		for (var j = 0, col; col = row.cells[j]; j++)
+		for (var j = 1, col; col = row.cells[j]; j++)
 		{
+			var grades = [];
 			for (var k = 0, child; child = col.childNodes[k]; k++)
 			{
-				//grades.push({grade:5,value:2});
+				grades.push({ grade: child.innerText, multiplier: values[child.style.color] });
    			}
+			var div = "";
+			div += "<div style='border-style: solid; max-width: 400px;'>";
+			div += "<h6 style='text-align: center;'>" + row.cells[0] + "</h6>";
+			div += "<table border='0'>";
+			div += "<tr><td>Matematikai átlag:</td><td>" + avg(grades).normal + "</td></tr>";
+			div += "<tr><td>Súlyozott átlag:</td><td>" + avg(grades).weighted + "</td></tr>";
+			div += "</table>";
+			div += "</div>";
+			avgwin.document.write(div);
    		}
 	}
+}
+function avg(arr)
+{
+	var all = 0;
+	var nums = 0;
+	for(var v = 0; v < arr.length; v++)
+	{
+		all += arr[v].grade;
+		nums += arr[v].multiplier;
+	}
+	var ret = { normal: Number(all)/arr.length, weighted: Number(all) / Number(nums) };
+	return ret;
 }

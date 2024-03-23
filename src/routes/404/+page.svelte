@@ -10,7 +10,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 100vh;
+        height: calc(100vh - 2 * var(--pico-block-spacing-vertical));
         position: relative;
 
         a {

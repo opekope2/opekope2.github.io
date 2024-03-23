@@ -258,27 +258,17 @@
 </div>
 
 <style lang="scss">
-    h1 {
-        --pico-font-size: 8rem;
-    }
-    h2 {
-        --pico-font-size: 4rem;
-    }
-    h3 {
-        margin-bottom: 0;
-    }
-
     .first-page {
         display: flex;
         flex-direction: column;
         justify-content: center;
         height: calc(100vh - var(--pico-block-spacing-vertical));
-        position: relative;
 
         .scroll-arrow {
             position: absolute;
             bottom: var(--pico-block-spacing-vertical);
-            width: 100%;
+            right: 0;
+            left: 0;
             font-size: 2rem;
             animation: scrollArrow 2s infinite alternate ease-in-out;
             transition: opacity 0.3s;

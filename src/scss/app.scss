@@ -1,0 +1,11 @@
+:root {
+    --default-pico-color: var(--pico-color);
+    --pico-font-family-sans-serif: "Fira Sans", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial,
+        "Helvetica Neue", sans-serif, var(--pico-font-family-emoji);
+    --pico-font-family-monospace: "Fira Code", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+        "Liberation Mono", monospace, var(--pico-font-family-emoji);
+}
+
+.center-text {
+    text-align: center;
+}

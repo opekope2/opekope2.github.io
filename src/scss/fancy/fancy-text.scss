@@ -1,0 +1,7 @@
+@import "fancy.scss";
+
+.fancy {
+    @include fancy;
+    background-clip: text;
+    color: transparent;
+}

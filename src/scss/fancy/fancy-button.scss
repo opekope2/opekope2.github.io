@@ -1,0 +1,40 @@
+@import "fancy.scss";
+
+.fancy-button {
+    padding: 0.5rem;
+    border: none;
+    border-radius: var(--pico-border-radius);
+    text-decoration: none;
+    position: relative;
+    background-color: transparent;
+    white-space: nowrap;
+    display: inline-block;
+
+    &::before {
+        @include fancy;
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: inherit;
+        border-radius: inherit;
+        transition: all 0.3s ease;
+        opacity: 0;
+    }
+
+    &:hover,
+    &:focus {
+        &::before {
+            opacity: 1;
+        }
+
+        * {
+            color: black;
+        }
+    }
+
+    * {
+        color: var(--default-pico-color);
+        position: relative;
+        transition: color 0.3s ease;
+    }
+}

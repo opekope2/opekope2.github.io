@@ -1,0 +1,21 @@
+@use "sass:list";
+
+$fancy-colors: orange, blueviolet, deepskyblue, mediumspringgreen;
+$fancy-colors-count: list.length($fancy-colors);
+$fancy-gradient: linear-gradient(90deg, $fancy-colors, list.nth($fancy-colors, 1));
+
+@mixin fancy {
+    background-image: $fancy-gradient;
+    background-size: calc($fancy-colors-count * 100%) 100%;
+    background-repeat: repeat;
+    animation: scrollBackground calc($fancy-colors-count * 10s) linear infinite;
+}
+
+@keyframes scrollBackground {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: calc(100% + 100% / ($fancy-colors-count - 1)) 100%;
+    }
+}

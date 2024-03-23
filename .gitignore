@@ -140,6 +140,7 @@ dist
 
 # SvelteKit build / generate output
 .svelte-kit
+build/
 
 ### Svelte ###
 # gitignore template for the SvelteKit, frontend web component framework
@@ -168,6 +169,3 @@ package
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/svelte,node,visualstudiocode
-
-# GitHub static pages output
-docs/

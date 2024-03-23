@@ -168,3 +168,6 @@ package
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/svelte,node,visualstudiocode
+
+# GitHub static pages output
+docs/

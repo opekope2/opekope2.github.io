@@ -49,12 +49,17 @@
     }
 </script>
 
+<svelte:head>
+    <title>Hi, I'm opekope2</title>
+    <meta name="description" content="opekope2's personal GitHub page" />
+</svelte:head>
+
 <svelte:window on:scroll={handleWindowScroll} on:load={handleWindowScroll} />
 
 <div class="first-page center-text container">
     <h1 id="hi-im-opekope2" class="fancy">Hi, I'm opekope2</h1>
     <p class="fancy">
-        ...and I spent way too much time on the SCSS. Also, I use Arch BTW.
+        ...and I spent way too much time on the SCSS. I use Arch BTW.
     </p>
     <div class="fancy scroll-arrow" bind:this={scrollArrow}>
         <a href="#find-me-on" on:click={handleAnchorClick}

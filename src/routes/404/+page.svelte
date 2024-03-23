@@ -1,3 +1,8 @@
+<svelte:head>
+    <title>404 Page not found</title>
+    <meta name="description" content="This page doesn't exist" />
+</svelte:head>
+
 <div class="error center-text">
     <h1 class="fancy">404</h1>
     <a class="fancy" href="/"

@@ -59,7 +59,7 @@
 <div class="first-page center-text container">
     <h1 id="hi-im-opekope2" class="fancy">Hi, I'm opekope2</h1>
     <p class="fancy">
-        ...and I spent way too much time on the SCSS. I use Arch BTW.
+        ...and I spent way too much time on the SCSS. And I use Arch BTW.
     </p>
     <div class="fancy scroll-arrow" bind:this={scrollArrow}>
         <a href="#find-me-on" on:click={handleAnchorClick}

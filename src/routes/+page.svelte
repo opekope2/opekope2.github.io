@@ -263,6 +263,10 @@
 </div>
 
 <style lang="scss">
+    h3 {
+        margin-bottom: 0;
+    }
+
     .first-page {
         display: flex;
         flex-direction: column;

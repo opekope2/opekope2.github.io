@@ -1,32 +1,14 @@
 <script lang="ts">
     import Card from "$lib/Card.svelte";
+    import ExpandableYouTubePlayer from "$lib/ExpandableYouTubePlayer.svelte";
     import MaterialIcon from "$lib/icon/MaterialIcon.svelte";
     import CurseForgeLogo from "$lib/logo/CurseForgeLogo.svelte";
     import GitHubLogo from "$lib/logo/GitHubLogo.svelte";
     import ModrinthLogo from "$lib/logo/ModrinthLogo.svelte";
 
-    let videoDetails: HTMLDetailsElement;
-    let videoIframe: HTMLIFrameElement;
     let scrollArrow: HTMLDivElement;
     let findMeH1: HTMLHeadingElement;
 
-    function toggleVideo(e: Event) {
-        if (videoDetails.open && videoIframe.dataset.loaded !== "true") {
-            videoIframe.dataset.loaded = "true";
-            videoIframe.src =
-                "//www.youtube-nocookie.com/embed/vlVUVsx6BYY?enablejsapi=1";
-        }
-
-        if (!videoDetails.open) {
-            videoIframe.contentWindow?.postMessage(
-                JSON.stringify({
-                    event: "command",
-                    func: "pauseVideo",
-                }),
-                "*",
-            );
-        }
-    }
 
     function handleWindowScroll(e: Event) {
         const windowBottom = window.scrollY + window.innerHeight;
@@ -133,23 +115,18 @@
     </Card>
     <Card>
         <h3 slot="header">AvM Staff Mod</h3>
-        <p>Staff from Animation vs Minecraft Shorts ep 33.</p>
-        <details bind:this={videoDetails} on:toggle={toggleVideo}>
-            <summary>
-                Watch <i>Animation vs Minecraft Shorts ep 33</i> by
-                <a href="https://www.youtube.com/@alanbecker">Alan Becker</a>
-            </summary>
-            <div class="youtube-container">
-                <iframe
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                    data-loaded="false"
-                    bind:this={videoIframe}
-                ></iframe>
-            </div>
-        </details>
+        <p>
+            AvM Staff Mod is a fan-made, mostly canonically accurate, and close
+            to vanilla mod adding staffs from Animation vs Minecraft series to
+            the latest version of Minecraft: Java Edition
+        </p>
+        <ExpandableYouTubePlayer id="it75ZbuP-f8">
+            Watch my introduction video showcasing the mod's features
+        </ExpandableYouTubePlayer>
+        <ExpandableYouTubePlayer id="vlVUVsx6BYY">
+            Watch <i>Animation vs Minecraft Shorts ep 33</i> by
+            <a href="https://www.youtube.com/@alanbecker">Alan Becker</a>
+        </ExpandableYouTubePlayer>
         <div slot="footer">
             <a
                 class="fancy-button"
@@ -290,17 +267,6 @@
 
     .links {
         margin-bottom: var(--pico-block-spacing-vertical);
-    }
-
-    .youtube-container {
-        position: relative;
-        padding-bottom: calc(900% / 16);
-
-        iframe {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
     }
 
     span.secondary {
